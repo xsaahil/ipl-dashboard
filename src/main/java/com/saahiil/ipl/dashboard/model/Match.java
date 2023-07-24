@@ -26,12 +26,34 @@ public class Match {
     private String umpire1;
     private String umpire2;
 
+    private String wonBy;
+    private String margin;
+
+    public String getWonBy() {
+        return wonBy;
+    }
+
+    public void setWonBy(String wonBy) {
+        this.wonBy = wonBy;
+    }
+
+    public String getMargin() {
+        return margin;
+    }
+
+    public void setMargin(String margin) {
+        this.margin = this.margin;
+    }
+
+
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
+
     public String getCity() {
         return city;
     }

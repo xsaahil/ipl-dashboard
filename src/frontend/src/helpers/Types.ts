@@ -13,6 +13,7 @@ export interface IMatch {
   umpire1: string | null;
   umpire2: string | null;
   venue: string;
+  wonBy: string;
 }
 
 export interface ITeam {

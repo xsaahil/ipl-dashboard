@@ -1,9 +1,16 @@
 import { Spinner, Text, VStack } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 import { useTeam } from "../api/useTeam";
 import { MatchDetailCard } from "../components/MatchDetailCard";
+import { useEffect } from "react";
 
 export const Team = () => {
-  const { data, isLoading } = useTeam("Chennai Super Kings");
+  const { team } = useParams();
+  const { data, isLoading, refetch } = useTeam(team as string);
+
+  useEffect(() => {
+    refetch();
+  }, [team, refetch]);
 
   if (isLoading)
     return (
@@ -25,7 +32,7 @@ export const Team = () => {
         Latest matches
       </Text>
       {data?.matches.map((match, index) => (
-        <MatchDetailCard key={index} match={match} />
+        <MatchDetailCard key={index} match={match} teamName={data.teamName} />
       ))}
     </VStack>
   );
