@@ -1,7 +1,8 @@
 package com.saahiil.ipl.dashboard.data;
 
-import org.springframework.batch.item.ItemProcessor;
 import com.saahiil.ipl.dashboard.model.Match;
+import org.springframework.batch.item.ItemProcessor;
+
 import java.time.LocalDate;
 
 
@@ -42,7 +43,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         match.setResultMargin(matchInput.getMargin());
         match.setUmpire1(matchInput.getUmpire1());
         match.setUmpire2(matchInput.getUmpire2());
-
+        match.setWonBy(matchInput.getWonBy());
         return match;
 
 
